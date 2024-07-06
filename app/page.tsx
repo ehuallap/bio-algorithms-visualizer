@@ -1,3 +1,4 @@
+// page.tsx
 import Image from "next/image";
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
         <div className="flex flex-col space-y-8">
           <a
             href="#"
-            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105"
+            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +23,7 @@ export default function Home() {
           </a>
           <a
             href="#"
-            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105"
+            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +38,7 @@ export default function Home() {
           </a>
           <a
             href="#"
-            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105"
+            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -1,12 +1,16 @@
-import Image from "next/image";
+import BackButton from "../components/BackButton";
 
-export default function Home() {
+export default function Phylogeny() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-dark">
+      <div className="absolute top-4 left-4">
+        <BackButton href="/" />
+      </div>
       <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm lg:flex flex-col">
         <div className="flex flex-col space-y-8">
+          {/* Replicate the buttons from the home page here */}
           <a
-            href="/alignment"
+            href="#"
             className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
           >
             <svg
@@ -21,7 +25,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold">ALINEAMIENTO</h2>
           </a>
           <a
-            href="/clustering"
+            href="#"
             className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
           >
             <svg
@@ -36,7 +40,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold">CLUSTERING</h2>
           </a>
           <a
-            href="/phylogeny"
+            href="#"
             className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
           >
             <svg

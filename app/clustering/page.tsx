@@ -20,9 +20,9 @@ export default function Clustering() {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            <path d="M6 12L5 11M18 12L19 11M3 18H21M5 21H19M7 18C7 15.2386 9.23858 13 12 13C14.7614 13 17 15.2386 17 18M12 3V10M12 10L15 7M12 10L9 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <h2 className="text-2xl font-semibold">ALINEAMIENTO</h2>
+            <h2 className="text-2xl font-semibold">AGLOMERATIVO MINIMO</h2>
           </a>
           <a
             href="#"
@@ -35,24 +35,9 @@ export default function Clustering() {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+              <path d="M12 10V3M12 3L9 6M12 3L15 6M6 12L5 11M18 12L19 11M3 18H21M5 21H19M7 18C7 15.2386 9.23858 13 12 13C14.7614 13 17 15.2386 17 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <h2 className="text-2xl font-semibold">CLUSTERING</h2>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-16 w-16 mb-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h2l2 2-2 2H3v4h4l2 2-2 2h4l2-2-2-2h4v-4h-2l-2-2 2-2h2V6h-4l-2-2-2 2H7l-2 2H3v2z" />
-            </svg>
-            <h2 className="text-2xl font-semibold">FILOGENIA</h2>
+            <h2 className="text-2xl font-semibold">AGLOMERATIVO MAXIMO</h2>
           </a>
         </div>
       </div>

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function BackButton({ href }: { href: string }) {
   return (
-    <Link href={href}>
-      <a className="flex items-center p-2 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light">
+    <Link legacyBehavior href={href}>
+      <a className="flex items-center p-2 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light font-bold">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6 mr-2"

@@ -20,39 +20,13 @@ export default function Phylogeny() {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <g>
+              <polygon points="14.069,5.304 14.069,0.16 8.926,0.16 8.926,2.533 5.143,4.861 5.143,4.064 0,4.064 0,9.208 
+                5.143,9.208 5.143,8.26 8.926,11.069 8.926,13.91 14.069,13.91 14.069,8.766 8.926,8.766 8.926,9.939 5.143,7.128 5.143,5.927 
+                8.926,3.599 8.926,5.304"/>
+            </g>
             </svg>
-            <h2 className="text-2xl font-semibold">ALINEAMIENTO</h2>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-16 w-16 mb-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
-            </svg>
-            <h2 className="text-2xl font-semibold">CLUSTERING</h2>
-          </a>
-          <a
-            href="#"
-            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-16 w-16 mb-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h2l2 2-2 2H3v4h4l2 2-2 2h4l2-2-2-2h4v-4h-2l-2-2 2-2h2V6h-4l-2-2-2 2H7l-2 2H3v2z" />
-            </svg>
-            <h2 className="text-2xl font-semibold">FILOGENIA</h2>
+            <h2 className="text-2xl font-semibold">ARBOL ENRAIZADO</h2>
           </a>
         </div>
       </div>

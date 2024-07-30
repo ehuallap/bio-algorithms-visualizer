@@ -1,54 +1,176 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import { useEffect } from 'react';
+
+export default function Root() {
+  useEffect(() => {
+    const handleButtonClick = (type: string) => {
+      localStorage.setItem('chainType', type);
+    };
+
+    const dnaButton = document.getElementById('dna-button');
+    const rnaButton = document.getElementById('rna-button');
+    const proteinButton = document.getElementById('protein-button');
+
+    if (dnaButton && rnaButton && proteinButton) {
+      dnaButton.addEventListener('click', () => handleButtonClick('dna'));
+      rnaButton.addEventListener('click', () => handleButtonClick('arn'));
+      proteinButton.addEventListener('click', () => handleButtonClick('protein'));
+    }
+
+    return () => {
+      if (dnaButton && rnaButton && proteinButton) {
+        dnaButton.removeEventListener('click', () => handleButtonClick('dna'));
+        rnaButton.removeEventListener('click', () => handleButtonClick('arn'));
+        rnaButton.removeEventListener('click', () => handleButtonClick('protein'));
+      }
+    };
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-dark">
-      <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm lg:flex flex-col">
-        <div className="flex flex-col space-y-8">
+    <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-dark">
+      <div className="max-w-5xl w-full flex flex-col font-mono text-sm items-center justify-center text-center">
+        <h1 className="text-4xl font-bold mb-12 text-light">SELECCIONA EL TIPO DE CADENA</h1>
+        <div className="space-y-8">
           <a
-            href="/alignment"
-            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
+            id="dna-button"
+            href="/home"
+            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-110 hover:bg-dark hover:text-light hover:fill-light"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-16 w-16 mb-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              version="1.0" xmlns="http://www.w3.org/2000/svg"
+              className="w-16 h-16 mb-4 group-hover:fill-light fill-dark transition-colors"
+              viewBox="0 0 512.000000 512.000000"
+              preserveAspectRatio="xMidYMid meet"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-            <h2 className="text-2xl font-semibold">ALINEAMIENTO</h2>
+
+              <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                stroke="none">
+                <path d="M3735 5102 c-22 -11 -61 -42 -86 -68 -155 -164 -227 -392 -245 -780
+                -8 -161 1 -205 48 -253 43 -44 88 -62 154 -62 91 0 153 46 179 133 l11 38 159
+                -160 160 -161 -680 3 c-604 3 -695 1 -816 -15 -399 -52 -676 -173 -894 -392
+                -240 -241 -370 -606 -401 -1126 -7 -129 1 -169 44 -221 74 -88 220 -88 294 0
+                37 44 45 79 57 236 6 77 12 141 14 142 2 2 157 -151 346 -340 l344 -344 -69
+                -8 c-38 -4 -433 -8 -879 -9 -712 -1 -821 -3 -899 -18 -127 -24 -229 -53 -289
+                -83 -126 -63 -254 -178 -277 -248 -26 -79 11 -180 82 -224 81 -50 167 -37 255
+                38 31 27 82 61 112 75 l54 27 378 -378 c209 -209 379 -384 379 -390 0 -22 -61
+                -131 -100 -177 -65 -80 -76 -168 -28 -245 44 -71 145 -108 223 -82 73 24 177
+                147 234 275 73 164 118 400 123 650 2 116 -13 160 -72 207 -63 49 -179 55
+                -239 11 -36 -27 -71 -81 -71 -109 0 -13 -3 -24 -8 -24 -4 0 -77 70 -162 155
+                l-155 156 670 -3 c498 -2 697 0 775 10 424 52 710 172 930 392 238 238 366
+                609 402 1171 l12 186 -27 54 c-52 107 -160 142 -267 89 -81 -41 -96 -82 -104
+                -285 -4 -88 -9 -177 -13 -199 l-5 -39 -339 339 -339 339 32 9 c18 4 357 7 753
+                7 883 -2 1032 7 1250 80 165 55 326 173 361 264 55 146 -81 297 -232 256 -22
+                -6 -67 -32 -100 -58 -33 -27 -83 -59 -112 -72 l-53 -25 -381 381 -381 381 18
+                45 c9 25 41 76 71 113 81 102 93 183 39 265 -50 77 -160 109 -240 71z m-962
+                -2330 l509 -509 -15 -35 c-59 -142 -196 -282 -353 -361 l-51 -26 -511 512
+                -512 512 30 59 c71 139 182 251 325 324 33 17 62 31 65 32 3 0 234 -229 513
+                -508z"/>
+              </g>
+              </svg>
+            <h2 className="text-3xl font-semibold">ADN</h2>
           </a>
           <a
-            href="/clustering"
-            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
+            id="rna-button"
+            href="/home"
+            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-110 hover:bg-dark hover:text-light hover:fill-light"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-16 w-16 mb-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              version="1.0" xmlns="http://www.w3.org/2000/svg"
+              className="w-16 h-16 mb-4 group-hover:fill-light fill-dark transition-colors"
+              viewBox="0 0 512.000000 512.000000"
+              preserveAspectRatio="xMidYMid meet"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
-            </svg>
-            <h2 className="text-2xl font-semibold">CLUSTERING</h2>
+              <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                stroke="none">
+                <path d="M1455 5106 c-84 -21 -147 -57 -211 -121 -68 -67 -106 -139 -124 -232
+                -17 -86 -8 -632 13 -768 42 -273 119 -520 232 -750 127 -259 253 -439 450
+                -643 146 -152 285 -268 453 -377 194 -127 273 -189 379 -299 l98 -101 -615 -5
+                c-564 -5 -618 -6 -647 -23 -38 -20 -73 -82 -73 -127 0 -50 35 -107 80 -130 38
+                -19 57 -20 744 -20 l705 0 16 -31 c23 -43 81 -198 89 -237 l8 -32 -762 0
+                c-743 0 -762 0 -800 -20 -45 -23 -80 -80 -80 -130 0 -50 35 -107 80 -130 38
+                -20 57 -20 830 -20 l790 0 0 -150 0 -150 -790 0 c-773 0 -792 0 -830 -20 -45
+                -23 -80 -80 -80 -130 0 -50 35 -107 80 -130 38 -20 57 -20 839 -20 l800 0 28
+                -57 c36 -74 131 -170 205 -206 266 -128 582 30 638 320 17 87 7 632 -13 768
+                -42 273 -119 520 -232 750 -137 280 -260 451 -490 680 -170 171 -260 243 -500
+                400 -122 80 -172 121 -270 219 l-120 121 615 5 c564 5 618 6 647 23 38 20 73
+                82 73 127 0 50 -35 107 -80 130 -38 19 -57 20 -744 20 l-705 0 -16 31 c-23 43
+                -81 198 -89 237 l-8 32 762 0 c743 0 762 0 800 20 45 23 80 80 80 130 0 50
+                -35 107 -80 130 -38 20 -57 20 -830 20 l-790 0 0 150 0 150 790 0 c773 0 792
+                0 830 20 45 23 80 80 80 130 0 50 -35 107 -80 130 -38 20 -57 20 -839 20
+                l-800 0 -28 58 c-34 70 -130 168 -196 201 -103 50 -209 62 -312 37z m175 -306
+                c26 -13 47 -34 60 -60 18 -36 20 -58 20 -275 0 -130 5 -279 11 -333 23 -208
+                85 -432 173 -617 164 -345 407 -616 741 -825 165 -104 283 -197 421 -335 187
+                -187 308 -353 422 -580 75 -150 125 -284 162 -434 52 -207 62 -293 67 -617 5
+                -292 5 -302 -16 -342 -24 -47 -80 -82 -131 -82 -50 0 -107 35 -130 80 -18 36
+                -20 58 -20 275 0 265 -10 378 -46 544 -84 378 -290 741 -562 990 -110 101
+                -159 138 -352 265 -85 56 -196 136 -245 178 -354 297 -612 703 -724 1141 -52
+                201 -63 297 -68 623 -5 292 -5 302 16 342 38 75 124 101 201 62z"/>
+              </g>
+              </svg>
+            <h2 className="text-3xl font-semibold">ARN</h2>
           </a>
           <a
-            href="/phylogeny"
-            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"
+            id="protein-button"
+            href="/home"
+            className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-110 hover:bg-dark hover:text-light hover:fill-light"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-16 w-16 mb-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              version="1.0" xmlns="http://www.w3.org/2000/svg"
+              className="w-16 h-16 mb-4 group-hover:fill-light fill-dark transition-colors"
+              viewBox="0 0 512.000000 512.000000"
+              preserveAspectRatio="xMidYMid meet"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h2l2 2-2 2H3v4h4l2 2-2 2h4l2-2-2-2h4v-4h-2l-2-2 2-2h2V6h-4l-2-2-2 2H7l-2 2H3v2z" />
-            </svg>
-            <h2 className="text-2xl font-semibold">FILOGENIA</h2>
+              <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                stroke="none">
+                <path d="M1323 4797 c-205 -93 -235 -111 -263 -167 -19 -37 -20 -58 -20 -380
+                0 -321 1 -343 20 -380 26 -51 64 -78 180 -130 52 -23 99 -45 103 -49 4 -4 -44
+                -31 -107 -60 -116 -54 -166 -93 -185 -144 -7 -18 -11 -152 -11 -364 0 -436 -8
+                -418 209 -513 56 -25 101 -47 101 -50 0 -4 -50 -28 -112 -55 -123 -54 -171
+                -93 -188 -152 -8 -26 -10 -151 -8 -380 l3 -341 30 -39 c23 -29 60 -53 154 -99
+                68 -33 120 -63 115 -67 -5 -3 -52 -24 -104 -47 -115 -50 -154 -79 -180 -130
+                -19 -37 -20 -59 -20 -380 0 -315 1 -344 19 -378 10 -20 30 -47 43 -59 27 -25
+                399 -193 428 -193 10 0 31 11 46 23 33 29 37 79 8 108 -11 10 -96 53 -189 95
+                -94 42 -176 81 -183 87 -8 7 -12 29 -10 65 l3 55 430 179 c632 262 626 259
+                663 292 57 50 62 73 62 286 0 208 -5 234 -56 282 -16 15 -161 93 -323 173
+                -161 80 -292 147 -290 149 2 2 130 54 284 116 154 62 295 123 313 137 64 48
+                72 80 72 283 0 190 -5 215 -51 265 -10 11 -164 95 -343 185 -291 148 -323 166
+                -303 176 12 6 153 64 313 129 393 157 384 148 384 402 0 145 -2 161 -23 198
+                -12 22 -36 49 -53 60 -17 11 -267 135 -557 275 -455 219 -527 257 -527 276 0
+                12 6 26 13 32 6 5 86 42 177 82 91 40 175 83 188 95 34 32 33 82 -2 112 -15
+                12 -37 23 -49 23 -12 -1 -104 -38 -204 -83z m278 -655 c202 -97 365 -179 362
+                -182 -2 -3 -95 -46 -206 -96 l-201 -91 -166 75 c-91 41 -171 79 -177 84 -10 8
+                -13 62 -13 205 0 182 1 195 18 189 9 -4 182 -87 383 -184z m358 -1312 c-7 -5
+                -101 -47 -208 -95 l-195 -87 -175 79 -176 78 0 103 0 104 115 47 115 48 269
+                -134 c186 -93 265 -138 255 -143z m-228 -1001 c133 -66 240 -122 238 -123 -4
+                -3 -313 -141 -385 -172 -28 -12 -39 -8 -205 66 l-174 78 0 82 0 82 130 53 c72
+                29 136 54 143 54 6 1 121 -53 253 -120z"/>
+                <path d="M3045 4799 c-201 -90 -236 -113 -265 -169 -19 -37 -20 -59 -20 -380
+                0 -321 1 -343 20 -380 26 -51 64 -78 180 -130 52 -23 99 -45 103 -49 4 -5 -38
+                -29 -95 -54 -116 -51 -174 -94 -194 -143 -11 -26 -14 -107 -14 -377 l0 -343
+                30 -47 c26 -41 42 -52 132 -95 57 -27 113 -53 126 -56 12 -4 22 -11 22 -16 0
+                -5 -10 -12 -22 -16 -13 -3 -69 -29 -126 -56 -90 -43 -106 -54 -132 -95 l-30
+                -47 0 -343 c0 -379 1 -385 61 -438 19 -17 83 -52 142 -79 59 -27 104 -53 100
+                -57 -5 -4 -55 -28 -113 -54 -114 -50 -142 -71 -171 -127 -18 -34 -19 -63 -19
+                -378 0 -321 1 -343 20 -380 11 -21 34 -50 52 -64 39 -29 390 -186 417 -186 10
+                0 30 9 45 21 20 16 26 29 26 59 0 51 -15 62 -202 145 -210 92 -200 84 -196
+                152 l3 56 522 217 c287 119 533 224 547 233 13 9 37 33 53 53 l28 37 3 196 c2
+                118 -1 210 -7 231 -20 68 -61 96 -371 247 -206 101 -290 147 -280 153 8 4 129
+                54 269 110 319 127 325 130 362 187 l29 47 0 183 c0 199 -7 231 -62 278 -12
+                12 -166 93 -340 180 -174 88 -314 163 -310 166 4 3 145 61 314 129 410 164
+                398 152 398 408 l0 158 -30 48 c-30 47 -36 50 -343 200 -172 84 -419 203 -549
+                266 -203 97 -238 117 -238 136 0 12 6 26 13 32 6 5 88 44 181 86 93 42 178 84
+                188 93 29 26 24 87 -8 112 -15 12 -36 21 -48 20 -11 0 -102 -36 -201 -80z
+                m864 -943 c8 -9 11 -56 9 -142 l-3 -128 -489 -198 c-270 -109 -494 -198 -498
+                -198 -5 0 -7 57 -6 126 l3 126 230 103 c127 56 340 153 475 213 135 61 250
+                111 256 111 6 1 17 -5 23 -13z m-5 -1122 c14 -5 16 -29 16 -159 0 -110 -3
+                -155 -12 -162 -14 -11 -968 -393 -981 -393 -4 0 -6 66 -5 148 l3 147 475 212
+                c261 116 478 212 482 212 3 1 13 -2 22 -5z m14 -1300 l2 -172 -142 -60 c-275
+                -116 -847 -352 -852 -352 -3 0 -6 74 -6 164 0 119 3 166 13 174 6 5 140 67
+                297 137 157 70 362 163 455 206 108 49 181 77 200 76 l30 -2 3 -171z"/>
+              </g>
+              </svg>
+            <h2 className="text-3xl font-semibold">PROTEINAS</h2>
           </a>
         </div>
       </div>

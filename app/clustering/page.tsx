@@ -1,14 +1,14 @@
-import BackButton from "../components/BackButton";
+import BackButton from "../../components/BackButton";
 
 export default function Clustering() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-dark">
       <div className="absolute top-4 left-4">
-        <BackButton href="/" />
+        <BackButton href="/home" />
       </div>
-      <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm lg:flex flex-col">
-        <div className="flex flex-col space-y-8">
-          {/* Replicate the buttons from the home page here */}
+      <div className="max-w-5xl w-full flex flex-col font-mono text-sm items-center justify-center text-center">
+          <h1 className="text-4xl font-bold mb-12 text-light">SELECCIONA EL TIPO DE CLUSTERING</h1>
+          <div className="space-y-8">
           <a
             href="#"
             className="flex flex-col items-center justify-center p-8 rounded-lg bg-light text-dark transition-transform hover:scale-105 hover:bg-dark hover:text-light"

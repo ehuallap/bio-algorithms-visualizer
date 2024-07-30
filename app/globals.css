@@ -51,3 +51,7 @@ body {
 .hover\:text-light:hover {
   color: #f5f5f5;
 }
+
+.hover\:fill-light:hover svg g {
+  fill: #f5f5f5;
+}
